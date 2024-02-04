@@ -1,3 +1,5 @@
+import os
+
 """
 Django settings for BookManagementSystem project.
 
@@ -20,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-wicaxuv+=el#b=z*0jo=*hq1e06&%&q5tv*qg2i5^zk!@atn(q'
+SECRET_KEY = 'django-insecure-_@l*x23q*ekletu#jgac=my9+%d!dzf6&%_1on7cos89*oyqk*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hikmet---book-web-service-ccfqewlwjq-ey.a.run.app', 'localhost', '127.0.0.1', '0.0.0.0','34.159.197.118']
 
 
 # Application definition
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'BookCatalog',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +78,11 @@ WSGI_APPLICATION = 'BookManagementSystem.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'book_catalog',
+        'USER': 'booklist',
+        'PASSWORD': 'Pablo.Escobar.1903!',
+        'HOST': f'/cloudsql/telefoni-hikmet:europe-west3:booklist'
     }
 }
 
@@ -115,7 +121,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
