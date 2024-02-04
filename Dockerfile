@@ -21,8 +21,5 @@ ENV DJANGO_SETTINGS_MODULE=BookManagementSystem.settings
 ENV PORT 8000
 EXPOSE 8000
 
-COPY entrypoint.sh ./
-RUN chmod +x entrypoint.sh
-
 # Gunicorn ile uygulamayı çalıştırma komutu
-CMD ["./entrypoint.sh"]
+CMD ["gunicorn", "myproject.wsgi:application", "--bind", "0.0.0.0:8000"]
