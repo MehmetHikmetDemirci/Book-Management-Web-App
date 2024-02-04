@@ -23,6 +23,8 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
+      env:
+        DJANGO_SETTINGS_MODULE: BookManagementSystem.settings
 
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v0.2.1
@@ -32,7 +34,7 @@ jobs:
 
     - name: Build and Push Docker image
       run: |
-        gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_CLOUDRUN_SERVICE }} .Dockerfile
+        gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_CLOUDRUN_SERVICE }} .
 
     - name: Deploy to Cloud Run
       run: |
