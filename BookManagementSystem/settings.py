@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_@l*x23q*ekletu#jgac=my9+%d!dzf6&%_1on7cos89*oyqk*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['hikmet---book-web-service-ccfqewlwjq-ey.a.run.app', 'localhost', '127.0.0.1', '0.0.0.0','34.159.197.118']
 
