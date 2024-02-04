@@ -13,7 +13,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
 
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -79,10 +81,10 @@ WSGI_APPLICATION = 'BookManagementSystem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'book_catalog',
-        'USER': 'booklist',
-        'PASSWORD': 'Pablo.Escobar.1903!',
-        'HOST': f'/cloudsql/telefoni-hikmet:europe-west3:booklist'
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST')
     }
 }
 
