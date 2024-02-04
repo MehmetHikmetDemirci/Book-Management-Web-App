@@ -16,7 +16,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone the repository:
 
-`git clone https://github.com/yourusername/BookManagementSystem.git`
+`https://github.com/MehmetHikmetDemirci/Book-Management-Web-App.git`
 
 `cd BookManagementSystem`
 
@@ -41,7 +41,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 `DB_NAME=book_catalog`
 
-`DB_USER=book_catalbooklistog`
+`DB_USER=yourusername`
 
 `DB_PASSWORD=your_secure_password`
 
@@ -56,11 +56,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 6. Start the server:
 
-`gunicorn BookManagementSystem.wsgi:application --bind $HOST:$PORT`
+`gunicorn BookManagementSystem.wsgi:application --bind localhost:$PORT`
 
 
 
-Visit `http://localhost:8000` in your browser to access the application.
+Visit `http://localhost:$PORT` in your browser to access the application.
 
 ## Using Docker
 
