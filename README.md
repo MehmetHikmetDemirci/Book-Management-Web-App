@@ -40,8 +40,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 
 `DB_NAME=book_catalog`
+
 `DB_USER=book_catalbooklistog`
+
 `DB_PASSWORD=your_secure_password`
+
 `DB_HOST=localhost`
 
 
