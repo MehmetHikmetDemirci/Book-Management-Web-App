@@ -1,0 +1,15 @@
+<!-- BookCatalog/templates/BookCatalog/book_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ book.title }}</title>
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <p>Yazar: {{ book.author }}</p>
+    <p>Yayın Tarihi: {{ book.published_date }}</p>
+    <p>{{ book.description }}</p>
+    <a href="{% url 'book_edit' book.id %}">Kitabı Düzenle</a>
+    <a href="{% url 'book_list' %}">Kitap Listesine Dön</a>
+</body>
+</html>
