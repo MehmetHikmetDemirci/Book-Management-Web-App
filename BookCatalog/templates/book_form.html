@@ -1,0 +1,16 @@
+<!-- BookCatalog/templates/BookCatalog/book_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kitap Ekle/Düzenle</title>
+</head>
+<body>
+    <h1>Kitap Ekle/Düzenle</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Kaydet</button>
+    </form>
+    <a href="{% url 'book_list' %}">İptal</a>
+</body>
+</html>
